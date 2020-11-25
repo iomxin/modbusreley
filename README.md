@@ -58,7 +58,7 @@ angular app และ controller ที่ใช้กับ HTML ด้าน�
 angular.module('app',[])
 .controller('modbusCtrl',['$scope','$http',function($scope,$http){
     $scope.turnOnRelay=function(ch){
-        $http.get('http://raspberrypi.local:3009/modbus/on/'+ch)
+        $http.get('http://raspberrypi.local:3013/modbus/on/'+ch)
         .then((response)=>{
             console.log(response);
         }).catch((err)=>{
@@ -67,7 +67,7 @@ angular.module('app',[])
     }
 
     $scope.turnOffRelay=function(ch){
-        $http.get('http://raspberrypi.local:3009/modbus/off/'+ch)
+        $http.get('http://raspberrypi.local:3013/modbus/off/'+ch)
         .then((response)=>{
             console.log(response);
         }).catch((err)=>{
@@ -103,5 +103,5 @@ angular.module('app',[])
         });
     });
 
-    app.listen(3009);
+    app.listen(3013);
 ```
